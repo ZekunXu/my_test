@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
             children: [
               TextField(
                 decoration: InputDecoration(
-                  hintText: "hahah",
+                  hintText: "用户名",
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
                       color: Color.fromRGBO(125, 126, 131, 1.000),
@@ -34,16 +34,27 @@ class _MyAppState extends State<MyApp> {
                       color: Color.fromRGBO(255, 255, 255, 1.000),
                     ),
                     borderRadius: BorderRadius.circular(6.0),
-                  )
+                  ),
                 ),
               ),
-              TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-
+              Container(
+                padding: EdgeInsets.fromLTRB(0, 30, 0, 20),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: "密码",
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color.fromRGBO(125, 126, 131, 1.000),
+                      ),
+                      borderRadius: BorderRadius.circular(6.0),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Color.fromRGBO(255, 255, 255, 1.000),
+                      ),
+                      borderRadius: BorderRadius.circular(6.0),
+                    )
                   ),
-                  hintText: "hahah",
                 ),
               ),
             ],
