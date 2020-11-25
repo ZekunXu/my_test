@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'components/textfield_title_widget.dart';
+import 'components/login_text_field_widget.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,6 +12,10 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
+  String username;
+  String password;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,60 +30,47 @@ class _MyAppState extends State<MyApp> {
                 Container(
                   width: double.maxFinite,
                   padding: EdgeInsets.fromLTRB(0, 60, 0, 60),
-                  child: Text("Sign In", style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),),
+                  child: TextFieldTitle(
+                    text: "Sign In",
+                    fontSize: 32,
+                  ),
                 ),
                 Container(
                   width: double.maxFinite,
                   padding: EdgeInsets.fromLTRB(0, 20, 0, 20),
-                  child: Text("username", textAlign: TextAlign.left,style: TextStyle(color: Color.fromRGBO(255, 255, 255, 1.000), fontSize: 16, fontWeight: FontWeight.bold),),
-                ),
-                TextField(
-                  style: TextStyle(
-                      color: Color.fromRGBO(255, 255, 255, 1.000), fontSize: 16),
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsets.symmetric(vertical: 16, horizontal: 20),
-                    hintText: "用户名",
-                    hintStyle:
-                    TextStyle(color: Color.fromRGBO(197, 198, 199, 1.000)),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color.fromRGBO(125, 126, 131, 1.000),
-                      ),
-                      borderRadius: BorderRadius.circular(6.0),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
+                  child: Text(
+                    "username",
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
                         color: Color.fromRGBO(255, 255, 255, 1.000),
-                      ),
-                      borderRadius: BorderRadius.circular(6.0),
-                    ),
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold),
                   ),
+                ),
+                LoginTextField(
+                  hintText: "username",
+                  onChanged: (value){
+                    setState(() {
+                      this.username = value;
+                    });
+                  },
                 ),
                 Container(
                   padding: EdgeInsets.fromLTRB(0, 50, 0, 0),
                   width: double.maxFinite,
-                  child: Text("password", textAlign: TextAlign.left,style: TextStyle(color: Color.fromRGBO(255, 255, 255, 1.000), fontSize: 16, fontWeight: FontWeight.bold),),
+                  child: TextFieldTitle(
+                    text: "password",
+                  ),
                 ),
                 Container(
                   padding: EdgeInsets.fromLTRB(0, 20, 0, 20),
-                  child: TextField(
-                    style: TextStyle(color: Color.fromRGBO(255, 255, 255, 1.000), fontSize: 16),
-                    decoration: InputDecoration(
-                      contentPadding: EdgeInsets.symmetric(vertical: 16,horizontal: 20),
-                        hintText: "密码",
-                        hintStyle: TextStyle(color: Color.fromRGBO(197, 198, 199, 1.000)),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color.fromRGBO(125, 126, 131, 1.000),
-                          ),
-                          borderRadius: BorderRadius.circular(6.0),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color.fromRGBO(255, 255, 255, 1.000),
-                          ),
-                          borderRadius: BorderRadius.circular(6.0),
-                        )),
+                  child: LoginTextField(
+                    hintText: "password",
+                    onChanged: (value){
+                      setState(() {
+                        this.password = value;
+                      });
+                    },
                   ),
                 ),
                 Container(
@@ -104,7 +97,9 @@ class _MyAppState extends State<MyApp> {
                         ),
                       ],
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      print({"username": this.username, "password": this.password});
+                    },
                   ),
                 ),
               ],
