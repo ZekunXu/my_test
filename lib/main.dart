@@ -1,7 +1,10 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'components/textfield_title_widget.dart';
 import 'components/login_text_field_widget.dart';
+import 'components/home/robot_list.dart';
 
 void main() {
   runApp(MyApp());
@@ -99,6 +102,7 @@ class _MyAppState extends State<MyApp> {
                     ),
                     onPressed: () {
                       print({"username": this.username, "password": this.password});
+                      Navigator.push(context, CupertinoPageRoute(builder: (context){return RobotListPage();}));
                     },
                   ),
                 ),
