@@ -51,6 +51,7 @@ class _RobotDetailPageState extends State<RobotDetailPage> {
                       child: Container(
                     padding: EdgeInsets.fromLTRB(15, 20, 15, 20),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
                           alignment: Alignment.centerLeft,
@@ -63,23 +64,29 @@ class _RobotDetailPageState extends State<RobotDetailPage> {
                                 fontWeight: FontWeight.bold),
                           ),
                         ),
-                        Row(
+                        Wrap(
+                          spacing: 0.0,
                           children: [
-                            Text(
-                              "battery: 20%",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 18),
+                            Container(
+                              alignment: AlignmentDirectional.centerStart,
+                              width: double.maxFinite/2,
+                              child: Text(
+                                "battery: 20%",
+                                style:
+                                TextStyle(color: Colors.white, fontSize: 18),
+                              ),
                             ),
-                            Padding(
-                              padding: EdgeInsets.fromLTRB(40, 0, 0, 0),
-                            ),
-                            Text(
-                              "last update time: 20:20",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 16),
-                            ),
+                            Container(
+                              alignment: AlignmentDirectional.centerEnd,
+                              width: double.maxFinite/2,
+                              child: Text(
+                                "last update time: 20:20",
+                                style:
+                                TextStyle(color: Color.fromRGBO(255, 255, 255, 0.5), fontSize: 14),
+                              ),
+                            )
                           ],
-                        )
+                        ),
                       ],
                     ),
                   )),
