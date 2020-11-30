@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import '../common_card_widget.dart';
 
@@ -99,31 +100,58 @@ class _RobotDetailPageState extends State<RobotDetailPage> {
                         children: [
                           Container(
                             width: double.maxFinite,
-                            height: 50,
+                            padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.all(Radius.circular(6.0)),
                               border: Border.all(color: Color.fromRGBO(125, 126, 131, 1.000), width: 1.0, style: BorderStyle.solid),
-                              color: Colors.white,
+                              color: Color.fromRGBO(53, 56, 60, 1.000),
                             ),
-                            child: Container(
-                              padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                              child: DropdownButtonHideUnderline(
-                                child: DropdownButton(
-                                  icon: Icon(Icons.arrow_downward, color: Colors.blue, size: 20,),
-                                  hint: Text("选择地图"),
-                                  onTap: () {},
-                                  onChanged: (value) {},
-                                  dropdownColor: Color.fromRGBO(53, 56, 60, 1.000),
-                                  items: [
-                                    DropdownMenuItem(
-                                      child: Text("00001"),
-                                    ),
-                                    DropdownMenuItem(
-                                      child: Text("00002"),
-                                    )
-                                  ],
-                                ),
+                            child: DropdownButtonHideUnderline(
+                              child: DropdownButton(
+                                icon: Icon(Icons.arrow_downward, color: Colors.blue, size: 20,),
+                                hint: Text("选择地图"),
+                                onTap: () {},
+                                onChanged: (value) {},
+                                dropdownColor: Color.fromRGBO(53, 56, 60, 1.000),
+                                items: [
+                                  DropdownMenuItem(
+                                    child: Text("00001", style: TextStyle(color: Colors.white),),
+                                  ),
+                                  DropdownMenuItem(
+                                    child: Text("00002", style: TextStyle(color: Colors.white),),
+                                  )
+                                ],
                               ),
+                            ),
+                          ),
+                          Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)),
+                          Container(
+                            width: double.maxFinite,
+                            height: kMinInteractiveDimension,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
+                              border: Border.all(color: Color.fromRGBO(125, 126, 131, 1.000), width: 1.0, style: BorderStyle.solid),
+                              color: Color.fromRGBO(53, 56, 60, 1.000),
+                            ),
+                            child: FlatButton(
+                              padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                              child: Stack(
+                                alignment: AlignmentDirectional.center,
+                                children: [
+                                  Align(
+                                    child: Text("hahahah", style: TextStyle(color: Colors.white,),),
+                                    alignment: Alignment.centerLeft,
+                                  ),
+                                  Align(
+                                    child: Icon(Icons.arrow_downward, color: Colors.blue, size: 20,),
+                                    alignment: Alignment.centerRight,
+                                  )
+                                ],
+                              ),
+                              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                              onPressed: (){
+                                print("hahahha");
+                              },
                             ),
                           ),
                         ],
