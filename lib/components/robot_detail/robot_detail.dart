@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import '../common_card_widget.dart';
+import 'show_bottom_sheet.dart';
 
 void main() {
   runApp(RobotDetailPage());
@@ -150,7 +151,7 @@ class _RobotDetailPageState extends State<RobotDetailPage> {
                               ),
                               materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                               onPressed: (){
-                                print("hahahha");
+                                ShowBottomSheet();
                               },
                             ),
                           ),
