@@ -71,20 +71,21 @@ class _RobotDetailPageState extends State<RobotDetailPage> {
                           children: [
                             Container(
                               alignment: AlignmentDirectional.centerStart,
-                              width: double.maxFinite/2,
+                              width: double.maxFinite / 2,
                               child: Text(
                                 "battery: 20%",
-                                style:
-                                TextStyle(color: Colors.white, fontSize: 18),
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 18),
                               ),
                             ),
                             Container(
                               alignment: AlignmentDirectional.centerEnd,
-                              width: double.maxFinite/2,
+                              width: double.maxFinite / 2,
                               child: Text(
                                 "last update time: 20:20",
-                                style:
-                                TextStyle(color: Color.fromRGBO(255, 255, 255, 0.5), fontSize: 14),
+                                style: TextStyle(
+                                    color: Color.fromRGBO(255, 255, 255, 0.5),
+                                    fontSize: 14),
                               ),
                             )
                           ],
@@ -103,23 +104,38 @@ class _RobotDetailPageState extends State<RobotDetailPage> {
                             width: double.maxFinite,
                             padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
-                              border: Border.all(color: Color.fromRGBO(125, 126, 131, 1.000), width: 1.0, style: BorderStyle.solid),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(6.0)),
+                              border: Border.all(
+                                  color: Color.fromRGBO(125, 126, 131, 1.000),
+                                  width: 1.0,
+                                  style: BorderStyle.solid),
                               color: Color.fromRGBO(53, 56, 60, 1.000),
                             ),
                             child: DropdownButtonHideUnderline(
                               child: DropdownButton(
-                                icon: Icon(Icons.arrow_downward, color: Colors.blue, size: 20,),
+                                icon: Icon(
+                                  Icons.arrow_downward,
+                                  color: Colors.blue,
+                                  size: 20,
+                                ),
                                 hint: Text("选择地图"),
                                 onTap: () {},
                                 onChanged: (value) {},
-                                dropdownColor: Color.fromRGBO(53, 56, 60, 1.000),
+                                dropdownColor:
+                                    Color.fromRGBO(53, 56, 60, 1.000),
                                 items: [
                                   DropdownMenuItem(
-                                    child: Text("00001", style: TextStyle(color: Colors.white),),
+                                    child: Text(
+                                      "00001",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
                                   ),
                                   DropdownMenuItem(
-                                    child: Text("00002", style: TextStyle(color: Colors.white),),
+                                    child: Text(
+                                      "00002",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
                                   )
                                 ],
                               ),
@@ -130,28 +146,55 @@ class _RobotDetailPageState extends State<RobotDetailPage> {
                             width: double.maxFinite,
                             height: kMinInteractiveDimension,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.all(Radius.circular(6.0)),
-                              border: Border.all(color: Color.fromRGBO(125, 126, 131, 1.000), width: 1.0, style: BorderStyle.solid),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(6.0)),
+                              border: Border.all(
+                                  color: Color.fromRGBO(125, 126, 131, 1.000),
+                                  width: 1.0,
+                                  style: BorderStyle.solid),
                               color: Color.fromRGBO(53, 56, 60, 1.000),
                             ),
-                            child: FlatButton(
-                              padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                              child: Stack(
-                                alignment: AlignmentDirectional.center,
-                                children: [
-                                  Align(
-                                    child: Text("hahahah", style: TextStyle(color: Colors.white,),),
-                                    alignment: Alignment.centerLeft,
+                            child: Builder(
+                              builder: (BuildContext context) {
+                                return FlatButton(
+                                  padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                                  child: Stack(
+                                    alignment: AlignmentDirectional.center,
+                                    children: [
+                                      Align(
+                                        child: Text(
+                                          "hahahah",
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                        alignment: Alignment.centerLeft,
+                                      ),
+                                      Align(
+                                        child: Icon(
+                                          Icons.arrow_downward,
+                                          color: Colors.blue,
+                                          size: 20,
+                                        ),
+                                        alignment: Alignment.centerRight,
+                                      )
+                                    ],
                                   ),
-                                  Align(
-                                    child: Icon(Icons.arrow_downward, color: Colors.blue, size: 20,),
-                                    alignment: Alignment.centerRight,
-                                  )
-                                ],
-                              ),
-                              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                              onPressed: (){
-                                ShowBottomSheet();
+                                  materialTapTargetSize:
+                                      MaterialTapTargetSize.shrinkWrap,
+                                  onPressed: () {
+                                    showModalBottomSheet(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                                      ),
+                                        context: context,
+                                        builder: (BuildContext context) {
+                                          return ShowBottomSheet();
+                                        }).then((value) {
+                                          print(value);
+                                    });
+                                  },
+                                );
                               },
                             ),
                           ),
