@@ -6,8 +6,9 @@ class RobotListButton extends StatefulWidget {
   final IconData icon;
   final Color primaryColor;
   final String text;
+  final Function onPressed;
   
-  RobotListButton({Key key, @required this.text, this.backgroundColor, this.icon, this.primaryColor}) : super(key: key);
+  RobotListButton({Key key, @required this.text, this.backgroundColor, this.icon, this.primaryColor, this.onPressed}) : super(key: key);
   
   _RobotListButtonState createState ()=> _RobotListButtonState();
 }
@@ -37,8 +38,7 @@ class _RobotListButtonState extends State<RobotListButton> {
           ),
         ],
       ),
-      onPressed: () {
-      },
+      onPressed: widget.onPressed,
     );
   }
   

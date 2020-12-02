@@ -18,6 +18,8 @@ class _RobotDetailPageState extends State<RobotDetailPage> {
   final String imgUrl =
       "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1606561617157&di=1d85f2d5e4989cf2d84bc137fe4071e4&imgtype=0&src=http%3A%2F%2Fimg.hqew.com%2FFile%2FImages%2F0-9999%2F0%2FHR%2F20176314924974872.jpg";
 
+  String value = "b";
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -184,6 +186,7 @@ class _RobotDetailPageState extends State<RobotDetailPage> {
                                       MaterialTapTargetSize.shrinkWrap,
                                   onPressed: () {
                                     showModalBottomSheet(
+                                      isScrollControlled: false,
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.all(Radius.circular(20.0)),
                                       ),
