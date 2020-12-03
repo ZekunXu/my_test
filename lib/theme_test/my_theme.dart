@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'my_color.dart';
 
 
 void main () {
@@ -18,7 +19,7 @@ class _MyThemePageState extends State<MyThemePage> {
 
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.amber,
+        primarySwatch: MyColor.blue,
         scaffoldBackgroundColor: Color.fromRGBO(47, 49, 53, 1.000),
         brightness: Brightness.light,
         buttonTheme: ButtonThemeData(
