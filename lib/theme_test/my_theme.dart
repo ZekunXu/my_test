@@ -20,10 +20,8 @@ class _MyThemePageState extends State<MyThemePage> {
       theme: ThemeData(
         primarySwatch: Colors.amber,
         scaffoldBackgroundColor: Color.fromRGBO(47, 49, 53, 1.000),
-        primaryColor: Colors.amber,
-        brightness: Brightness.dark,
+        brightness: Brightness.light,
         buttonTheme: ButtonThemeData(
-          buttonColor: Colors.indigo,
           textTheme: ButtonTextTheme.primary,
         ),
         cardTheme: CardTheme(
@@ -35,7 +33,6 @@ class _MyThemePageState extends State<MyThemePage> {
           shadowColor: Color.fromRGBO(0, 0, 0, 1.000),
         )
       ),
-      darkTheme: ThemeData.dark(),
       home: Scaffold(
         appBar: AppBar(
           title: Text("This is theme"),
