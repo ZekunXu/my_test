@@ -34,7 +34,7 @@ class _MyAppState extends State<MyApp> {
                   width: double.maxFinite,
                   padding: EdgeInsets.fromLTRB(0, 60, 0, 60),
                   child: TextFieldTitle(
-                    text: "Sign In",
+                    text: "WELCOME",
                     fontSize: 32,
                   ),
                 ),

@@ -3,6 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import '../common_card_widget.dart';
 import 'show_bottom_sheet.dart';
+import '../home/robot_list_button_widget.dart';
 
 void main() {
   runApp(RobotDetailPage());
@@ -26,6 +27,16 @@ class _RobotDetailPageState extends State<RobotDetailPage> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Color.fromRGBO(47, 49, 53, 1.000),
+        bottomNavigationBar: SizedBox(
+          height: 49,
+          width: double.infinity,
+          child: RobotListButton(
+            text: "去导航",
+            onPressed: (){
+              print("去导航啦");
+            },
+          ),
+        ),
         body: SingleChildScrollView(
           child: Container(
             padding: EdgeInsets.fromLTRB(20, 80, 20, 30),
@@ -186,15 +197,16 @@ class _RobotDetailPageState extends State<RobotDetailPage> {
                                       MaterialTapTargetSize.shrinkWrap,
                                   onPressed: () {
                                     showModalBottomSheet(
-                                      isScrollControlled: false,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                                      ),
+                                        isScrollControlled: false,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(20.0)),
+                                        ),
                                         context: context,
                                         builder: (BuildContext context) {
                                           return ShowBottomSheet();
                                         }).then((value) {
-                                          print(value);
+                                      print(value);
                                     });
                                   },
                                 );

@@ -165,13 +165,17 @@ class _ShowBottomSheetState extends State<ShowBottomSheet> {
           ),
           Align(
             alignment: Alignment.bottomCenter,
-            child: RobotListButton(
-              text: "confirm",
-              backgroundColor: Colors.amber,
-              onPressed: (){
-                Navigator.pop(context, pathName);
-              },
-            ),
+            child: SizedBox(
+              width: double.infinity,
+              height: 49,
+              child: RobotListButton(
+                text: "confirm",
+                backgroundColor: Colors.amber,
+                onPressed: (){
+                  Navigator.pop(context, pathName);
+                },
+              ),
+            )
           )
         ],
       ),
